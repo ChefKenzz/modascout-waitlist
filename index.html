@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ModaScout — Join the Waitlist</title>
+</head>
+<body style="margin:0;">
+
+<div id="ms-waitlist">
+  <div class="ms-card">
+    <div class="ms-logo">MODASCOUT</div>
+    <h1 class="ms-headline">You see it.<br>We find it.<br>You own it.</h1>
+    <p class="ms-sub">Join the waitlist for early access. Refer friends to skip ahead.</p>
+
+    <div class="ms-form">
+      <input id="ms-email" type="email" placeholder="Enter your email" autocomplete="email" />
+      <button id="ms-submit" type="button">JOIN THE WAITLIST</button>
+    </div>
+
+    <p id="ms-message" class="ms-message"></p>
+
+    <div id="ms-success" class="ms-success" style="display:none;">
+      <p class="ms-success-title">You're on the list.</p>
+      <p class="ms-success-text">Share your link. Each friend who joins jumps you <strong>10 spots</strong> up the queue.</p>
+      <div class="ms-link-row">
+        <input id="ms-reflink" type="text" readonly />
+        <button id="ms-copy" type="button">COPY</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(function () {
+  // ===========================================================
+  //  CONFIG  —  edit only the KEY line below
+  // ===========================================================
+  var SUPABASE_URL = "https://hlfyckjdkcfjxjxrqufc.supabase.co";
+  var SUPABASE_KEY = "sb_publishable_d3jYDGcqBolyKDDzlc8UVA_FAtDFgwj";   // <-- put your anon / publishable key between these quotes
+  var SPOTS_PER_REFERRAL = 10;
+  // ===========================================================
+
+  var client = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+  var emailInput = document.getElementById("ms-email");
+  var submitBtn  = document.getElementById("ms-submit");
+  var message    = document.getElementById("ms-message");
+  var form       = document.querySelector("#ms-waitlist .ms-form");
+  var successBox = document.getElementById("ms-success");
+  var refLinkInp = document.getElementById("ms-reflink");
+  var copyBtn    = document.getElementById("ms-copy");
+
+  function getReferrer() {
+    var params = new URLSearchParams(window.location.search);
+    return params.get("ref");
+  }
+
+  function showError(text) {
+    message.textContent = text;
+    message.style.color = "#ff6b6b";
+  }
+
+  function isValidEmail(value) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  }
+
+  submitBtn.addEventListener("click", async function () {
+    var email = emailInput.value.trim().toLowerCase();
+    message.textContent = "";
+
+    if (!isValidEmail(email)) {
+      showError("Please enter a valid email address.");
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "JOINING...";
+
+    var referrer = getReferrer();
+
+    var insertResult = await client
+      .from("waitlist")
+      .insert({ email: email, referred_by: referrer })
+      .select("referral_code")
+      .single();
+
+    if (insertResult.error) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "JOIN THE WAITLIST";
+      if (insertResult.error.code === "23505") {
+        showError("That email is already on the list.");
+      } else {
+        showError("Something went wrong. Please try again.");
+      }
+      return;
+    }
+
+    if (referrer) {
+      var refRow = await client
+        .from("waitlist")
+        .select("referral_count")
+        .eq("referral_code", referrer)
+        .single();
+
+      if (!refRow.error && refRow.data) {
+        await client
+          .from("waitlist")
+          .update({ referral_count: refRow.data.referral_count + 1 })
+          .eq("referral_code", referrer);
+      }
+    }
+
+    var myCode = insertResult.data.referral_code;
+    var myLink = "https://getmodascout.com/?ref=" + myCode;
+
+    form.style.display = "none";
+    successBox.style.display = "block";
+    refLinkInp.value = myLink;
+  });
+
+  copyBtn.addEventListener("click", function () {
+    refLinkInp.select();
+    navigator.clipboard.writeText(refLinkInp.value).then(function () {
+      copyBtn.textContent = "COPIED";
+      setTimeout(function () { copyBtn.textContent = "COPY"; }, 2000);
+    });
+  });
+
+  emailInput.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") submitBtn.click();
+  });
+})();
+</script>
+
+<style>
+  html, body { margin: 0; padding: 0; background: #000; }
+  #ms-waitlist {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: #000;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 20px;
+    box-sizing: border-box;
+  }
+  #ms-waitlist * { box-sizing: border-box; }
+  #ms-waitlist .ms-card { width: 100%; max-width: 420px; text-align: center; }
+  #ms-waitlist .ms-logo {
+    font-size: 13px; letter-spacing: 0.35em; font-weight: 600;
+    margin-bottom: 40px; color: #fff;
+  }
+  #ms-waitlist .ms-headline {
+    font-size: 34px; line-height: 1.15; font-weight: 600;
+    margin: 0 0 18px; color: #fff;
+  }
+  #ms-waitlist .ms-sub {
+    font-size: 15px; line-height: 1.5; color: #b3b3b3; margin: 0 0 32px;
+  }
+  #ms-waitlist .ms-form { display: flex; flex-direction: column; gap: 12px; }
+  #ms-waitlist input {
+    width: 100%; padding: 14px; border-radius: 10px;
+    border: 0.5px solid #e0e0e0; background: #fafafa;
+    color: #000; font-size: 15px; outline: none;
+  }
+  #ms-waitlist input::placeholder { color: #888; }
+  #ms-waitlist button {
+    width: 100%; padding: 15px; border: none; border-radius: 10px;
+    background: #fff; color: #000; font-size: 13px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer;
+    transition: opacity 0.15s ease;
+  }
+  #ms-waitlist button:hover { opacity: 0.85; }
+  #ms-waitlist button:disabled { opacity: 0.5; cursor: default; }
+  #ms-waitlist .ms-message { font-size: 14px; margin: 16px 0 0; min-height: 18px; }
+  #ms-waitlist .ms-success-title { font-size: 22px; font-weight: 600; margin: 0 0 10px; }
+  #ms-waitlist .ms-success-text { font-size: 15px; color: #b3b3b3; line-height: 1.5; margin: 0 0 24px; }
+  #ms-waitlist .ms-link-row { display: flex; gap: 8px; }
+  #ms-waitlist .ms-link-row input { font-size: 13px; }
+  #ms-waitlist .ms-link-row button { width: auto; padding: 14px 20px; white-space: nowrap; }
+  @media (max-width: 480px) {
+    #ms-waitlist .ms-headline { font-size: 28px; }
+  }
+</style>
+
+</body>
+</html>
