@@ -1,0 +1,129 @@
+<!--
+  ModaScout waitlist welcome email — MJML source.
+  This exact file (renamed index.mjml, zipped) is what gets uploaded to Loops
+  via the email editor's "Code" option. See HOW-TO-UPDATE-LOOPS.md.
+
+  PLACEHOLDERS (Loops fills these in when sending):
+    {referralLink}      — the person's personal referral link (contact property
+                          from the Supabase signup — CONFIRM the property's exact
+                          name in Loops before going live; see the guides)
+    {unsubscribe_link}  — Loops' required unsubscribe URL, inserted automatically
+-->
+<mjml>
+  <mj-head>
+    <mj-title>Welcome to ModaScout — you're on the list</mj-title>
+    <mj-preview>You're in. The app launches this September — and every friend you invite moves you up 10 spots.</mj-preview>
+    <mj-attributes>
+      <mj-all font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" />
+      <mj-text color="#a6a6a6" font-size="15px" line-height="1.6" />
+      <mj-section padding="0" />
+    </mj-attributes>
+    <mj-raw>
+      <meta name="color-scheme" content="dark" />
+      <meta name="supported-color-schemes" content="dark" />
+    </mj-raw>
+  </mj-head>
+
+  <mj-body background-color="#000000" width="600px">
+
+    <!-- wordmark -->
+    <mj-section padding="40px 24px 8px">
+      <mj-column>
+        <mj-text align="center" color="#ffffff" font-size="21px" font-weight="700" letter-spacing="-0.5px" padding="0">
+          ModaScout
+        </mj-text>
+        <mj-text align="center" color="#6a6a6a" font-size="11px" letter-spacing="2px" text-transform="uppercase" padding="10px 0 0">
+          You see it&nbsp;&nbsp;·&nbsp;&nbsp;We find it&nbsp;&nbsp;·&nbsp;&nbsp;You own it
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- hero -->
+    <mj-section padding="36px 24px 0">
+      <mj-column>
+        <mj-text align="center" color="#ffffff" font-size="34px" font-weight="600" letter-spacing="-1px" line-height="1.15" padding="0">
+          You're on the list.
+        </mj-text>
+        <mj-text align="center" padding="18px 12px 0">
+          Welcome — and thank you for being early. ModaScout does one simple thing:
+          spot an outfit anywhere, share it to us, and we find the actual pieces —
+          real listings you can really buy. We built it because "where is that from?"
+          deserved a better answer.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- what happens next -->
+    <mj-section padding="36px 24px 0">
+      <mj-column>
+        <mj-divider border-width="1px" border-color="#191919" padding="0 0 28px" />
+        <mj-text align="center" color="#6a6a6a" font-size="11px" letter-spacing="2px" text-transform="uppercase" padding="0 0 12px">
+          What happens next
+        </mj-text>
+        <mj-text align="center" padding="0 12px">
+          The app launches this September. You're on the early-access list, so
+          you'll hear from us before the doors open to everyone else — keep an
+          eye on this inbox for your invite.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- referral card -->
+    <mj-section padding="32px 24px 0">
+      <mj-column background-color="#0d0d0d" border="1px solid #232323" border-radius="16px" padding="30px 26px 32px">
+        <mj-text align="center" color="#ffffff" font-size="19px" font-weight="600" letter-spacing="-0.3px" padding="0">
+          Want in sooner? Skip the queue.
+        </mj-text>
+        <mj-text align="center" padding="12px 6px 0">
+          Every friend who joins with your link moves you up
+          <strong style="color:#ffffff;">10 spots</strong>. A few shares can take
+          you from the back of the line to the front.
+        </mj-text>
+        <!-- REFERRAL LINK PLACEHOLDER (button) -->
+        <mj-button href="{referralLink}" background-color="#ffffff" color="#000000" font-size="15px" font-weight="600" border-radius="12px" inner-padding="14px 28px" padding="24px 0 0">
+          Share your link
+        </mj-button>
+        <!-- REFERRAL LINK PLACEHOLDER (visible fallback for people who don't tap buttons) -->
+        <mj-text align="center" color="#6a6a6a" font-size="13px" padding="16px 6px 0">
+          Or copy it directly:<br />
+          <a href="{referralLink}" style="color:#a6a6a6; text-decoration:underline; word-break:break-all;">{referralLink}</a>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- socials -->
+    <mj-section padding="36px 24px 0">
+      <mj-column>
+        <mj-text align="center" color="#8d8d8d" font-size="14px" padding="0">
+          Come say hi while you wait —
+        </mj-text>
+        <mj-text align="center" font-size="14px" padding="10px 0 0">
+          <a href="https://www.tiktok.com/@getmodascout" style="color:#ffffff; text-decoration:underline;">TikTok</a>
+          &nbsp;&nbsp;·&nbsp;&nbsp;
+          <a href="https://www.instagram.com/getmodascout" style="color:#ffffff; text-decoration:underline;">Instagram</a>
+          &nbsp;&nbsp;·&nbsp;&nbsp;
+          <a href="https://x.com/getmodascout" style="color:#ffffff; text-decoration:underline;">X</a>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- footer -->
+    <mj-section padding="40px 24px 44px">
+      <mj-column>
+        <mj-divider border-width="1px" border-color="#191919" padding="0 0 24px" />
+        <mj-text align="center" color="#6a6a6a" font-size="12px" line-height="1.6" padding="0">
+          You're getting this because you joined the waitlist at
+          <a href="https://www.getmodascout.com" style="color:#8d8d8d; text-decoration:underline;">getmodascout.com</a>.
+        </mj-text>
+        <mj-text align="center" color="#6a6a6a" font-size="12px" padding="10px 0 0">
+          Don't want these emails?
+          <a href="{unsubscribe_link}" style="color:#8d8d8d; text-decoration:underline;">Unsubscribe</a>
+        </mj-text>
+        <mj-text align="center" color="#4d4d4d" font-size="12px" padding="14px 0 0">
+          © 2026 ModaScout
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+  </mj-body>
+</mjml>
