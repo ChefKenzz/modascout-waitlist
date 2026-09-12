@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ModaScout Privacy Policy, effective 12 August 2026.">
+  <title>Privacy Policy | ModaScout</title>
+  <link rel="canonical" href="https://www.getmodascout.com/privacy/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/assets/legal.css">
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <header><a class="brand" href="/"><img src="/favicon.svg" width="38" height="38" alt="">ModaScout</a><nav aria-label="Information"><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/support/">Support</a><a href="/delete-account/">Delete account</a></nav></header>
+  <main id="content"><h1>ModaScout Privacy Policy</h1>
+<p>Effective date: 12 August 2026 Last updated: 12 August 2026</p>
+<p>This Privacy Policy explains how ModaScout collects, uses, shares, stores, and protects personal information when you use the ModaScout mobile application, its Share-to-App features, notifications, websites or support pages that link to this Policy, and the related backend services (together, the <strong>Service</strong>).</p>
+<h2>1. Who we are</h2>
+<p>ModaScout is a trading name and brand of ModaScout Limited. In this Policy, <strong>ModaScout</strong>, <strong>we</strong>, <strong>us</strong>, and <strong>our</strong> mean ModaScout Limited.</p>
+<p>Legal operator and data controller: <strong>ModaScout Limited</strong></p>
+<p>Company number: <strong>17397182</strong></p>
+<p>Registered office: <strong>11 Khama Road, London, SW17 0EN, United Kingdom</strong></p>
+<p>Privacy and support email: <strong>mailing@getmodascout.com</strong></p>
+<p>Telephone: <strong>+44 7412 805807</strong></p>
+<p>Website: <a href="https://getmodascout.com">https://getmodascout.com</a></p>
+<p>Public account-deletion request page: <a href="https://getmodascout.com/delete-account">https://getmodascout.com/delete-account</a></p>
+<p>Support page: <a href="https://getmodascout.com/support">https://getmodascout.com/support</a></p>
+<p>ModaScout Limited is the controller of the personal information described in this Policy. Some third-party services act as our processors, and some may act as separate controllers for their own activities, as explained below. A director acting as ModaScout&#x27;s privacy lead monitors privacy requests sent to the address above.</p>
+<h2>2. The short version</h2>
+<ul>
+<li>ModaScout lets you upload or share a clothing photo or screenshot, identify visible garments using artificial intelligence, and search for visually or textually similar products.</li>
+<li>New scans require a separate, explicit choice about third-party AI usage. If you do not consent, you can still access parts of the app, but ModaScout cannot process new scans.</li>
+<li>When you consent and start a scan, the uploaded image is sent to Google Gemini to identify visible clothing. Selected garment crops, descriptions, and search settings are sent through SerpAPI to Google Lens or Google Shopping to find products.</li>
+<li>We store scans, garment crops, search results, account information, preferences, likes, operational diagnostics, and notification information as needed to provide and secure the Service.</li>
+<li>We do not currently use third-party advertising or analytics SDKs in the mobile app. We do not sell personal information or share it for cross-context behavioural advertising.</li>
+<li>If you create a registered account, you may separately opt in to marketing email. Marketing is optional, is not required to use ModaScout, and can be stopped at any time.</li>
+<li>You can withdraw AI consent, turn off notifications, delete individual scans, and request account deletion. Withdrawing AI consent stops new AI processing but does not automatically delete information already processed; deletion is a separate action.</li>
+<li>ModaScout is a fashion discovery tool. Product matches, descriptions, prices, availability, currencies, and retailer information may be incomplete, delayed, or wrong.</li>
+</ul>
+<h2>3. Information we collect</h2>
+<h3>3.1 Account and session information</h3>
+<p>ModaScout supports stable guest accounts and registered accounts.</p>
+<p>For a registered account, we collect your display name, email address, account identifier, account status, and timestamps associated with account creation or updates. Authentication is provided through Supabase Auth. ModaScout does not need to see or store your plaintext password in its operational database, but Supabase processes authentication credentials and session information for us.</p>
+<p>For a guest account, we create a pseudonymous user identifier and session credentials so your scans and Wardrobe can remain associated with the same installation. If you later register or sign in, eligible guest data may be transferred to the registered account and the old guest identity may be deleted or retained briefly as a security tombstone while cleanup completes.</p>
+<p>The app stores access and refresh tokens, expiry information, consent state, and limited account details on your device. On iOS, the same information may be stored in the private App Group used by the main app, Share Extension, notification extension, and shared-storage components so those features can act for the correct account.</p>
+<h3>3.2 AI consent information</h3>
+<p>We store whether you granted or withdrew consent to third-party AI usage, the disclosure version you were shown, the relevant timestamps, the source of the change, and a pseudonymous subject identifier. We maintain a consent audit so we can enforce your current choice, prevent processing without authority, demonstrate compliance, and investigate disputes.</p>
+<h3>3.3 Photos, screenshots, shared files, and camera images</h3>
+<p>When you choose a photo, take a camera photo, or share an image to ModaScout, we process:</p>
+<ul>
+<li>the image content itself, which may include clothing, people, faces, bodies, surroundings, text, retailer interfaces, or other visible information;</li>
+<li>file and upload information such as file type, file size, image dimensions, upload-attempt identifiers, source method, and processing timestamps;</li>
+<li>a private stored copy of the source image; and</li>
+<li>garment crops created from the image.</li>
+</ul>
+<p>ModaScout does not request precise device-location permission. During first setup, the app may read the device&#x27;s locale or region code locally to suggest a Base Country. A photo may nevertheless reveal location or other personal information through its visible content. Do not upload images that you are not entitled to use or that reveal information you do not want processed.</p>
+<h3>3.4 Clothing analysis and search information</h3>
+<p>AI analysis may generate or store:</p>
+<ul>
+<li>detected garment labels and categories;</li>
+<li>colour, material, pattern, texture, fit, silhouette, neckline, sleeve, length, visibility, and confidence information;</li>
+<li>crop coordinates and garment crops;</li>
+<li>visible brand marks, visible garment text, retailer or domain clues, and product-search phrases;</li>
+<li>layer and wearer-context attributes used to separate garments in the image;</li>
+<li>suggested retail department information and compatibility terms; and</li>
+<li>technical provider outcomes, warnings, retries, status codes, and processing durations.</li>
+</ul>
+<p>ModaScout is not designed to identify people, recognise faces, or create biometric templates. It may analyse visible context about how clothing is worn because that is necessary to distinguish garments and search for products.</p>
+<p>When you start a product search, we also process the garments you selected, the search generation and reliability checkpoint, the Base Country, language and country localisation, local-currency preference, your optional Male or Female profile choice, and whether you enabled <strong>Show fewer opposite-sex results</strong>. These settings are snapshotted for that search so concurrent jobs and retries use the same context.</p>
+<h3>3.5 Product, retailer, and Wardrobe information</h3>
+<p>We collect and store product-search results such as product identifiers, titles, brands, merchants, prices, currencies, images, retailer URLs, availability signals, ranking information, match type, source, and the garment to which a result relates.</p>
+<p>If you like a product, we store it in your Wardrobe using a stable product identity. We store when it was saved and the product details needed to show it again. ModaScout does not currently process retailer payments, payment-card details, delivery addresses, or your completed purchases. If you visit or buy from a retailer, the retailer processes that interaction under its own terms and privacy policy.</p>
+<h3>3.6 Preferences and local app state</h3>
+<p>The app may store your:</p>
+<ul>
+<li>optional sex preference;</li>
+<li>opposite-department results preference;</li>
+<li>Base Country and local-currency preference;</li>
+<li>notification preference and operating-system permission state;</li>
+<li>onboarding and tutorial progress;</li>
+<li>scan labels, recently completed scan identifiers, and share-intent deduplication records; and</li>
+<li>local choices used to avoid repeating confirmations.</li>
+</ul>
+<p>Some preferences remain only on your device. Search-related preferences are sent to the backend when needed to run or restore a search. On iOS, relevant account, consent, device, and search-preference values may also be copied to the private App Group so Share-to-App and expanded notification search can work correctly.</p>
+<h3>3.7 Device, network, diagnostics, and usage information</h3>
+<p>We create a random installation identifier, called a client device ID, to associate guest sessions, uploads, quotas, notification routing, and Share-to-App reconciliation with the correct installation. It is not an advertising identifier and is not intended to track you across unrelated apps or services.</p>
+<p>We may process device platform, app build, operating-system permission state, Expo push token, IP address, request time, API route, connection information, errors, provider call counts, job status, retry state, search and scan limits, latency, estimated provider cost, and security or abuse-prevention signals.</p>
+<p>We use first-party operational usage events and daily summaries to operate quotas, monitor reliability, diagnose failed scans or searches, and manage service cost. The current mobile app does not include third-party advertising or behavioural analytics SDKs.</p>
+<h3>3.8 Notifications</h3>
+<p>If you enable notifications and the operating system grants permission, we process your Expo push token, platform, environment, installation identifier, notification preference, token status, ticket or receipt identifiers, delivery outcome, and limited notification payload information.</p>
+<p>Notifications may say that a scan or search is complete or failed. On supported iOS devices, an expanded scan notification may include garment labels, garment crop references, and capture identifiers so you can choose up to three garments and start a search without opening the main app. Notification previews may be visible on a locked device depending on your operating-system settings.</p>
+<h3>3.9 Support, complaints, and deletion requests</h3>
+<p>If you contact us, we collect the information you provide, such as your name, email address, message, attachments, and information needed to investigate the issue. If you request account deletion outside the app, we may collect an email address, verification information, request timestamps, request status, failure details, and records needed to complete and prove the deletion.</p>
+<h3>3.10 Marketing preferences and email</h3>
+<p>If you create a registered account and actively select the unticked marketing option, we process your email address, name where available, consent status, the wording and version presented, the time and source of the choice, email topics or preferences, delivery information, and unsubscribe status. Account and security emails are transactional and do not depend on marketing consent.</p>
+<p>We use Resend to deliver authentication and operational email and, where you opt in, marketing email. Resend may process recipient details, message content, delivery events, and suppression or unsubscribe records in the United States and through its subprocessors.</p>
+<h2>4. Where information comes from</h2>
+<p>We obtain information:</p>
+<ul>
+<li>directly from you when you create an account, change settings, upload or share an image, select garments, like products, request deletion, or contact us;</li>
+<li>automatically from the app, your installation, and our backend when the Service processes a request;</li>
+<li>from your device and operating system, such as permission status, app platform, device region, and push token;</li>
+<li>from Google Gemini, SerpAPI, Google Lens, Google Shopping, retailers, product pages, image hosts, and currency-data services when they return analysis or product information; and</li>
+<li>from Apple, Google, Expo, Supabase, Render, and other infrastructure providers when they return authentication, delivery, hosting, or security information.</li>
+</ul>
+<h2>5. How and why we use information</h2>
+<h3>5.1 To provide the Service</h3>
+<p>We use information to create and maintain guest or registered sessions; receive uploads; identify clothing; create garment crops; search for products; localise countries, retailers, and currencies; display results; maintain Wardrobe likes; restore searches; support Share-to-App; and send requested notifications.</p>
+<p>Where data-protection law requires a lawful basis, this processing is generally necessary to perform our contract with you or to take steps at your request. Third-party AI processing is additionally gated by the explicit consent choice shown in the app.</p>
+<h3>5.2 To honour AI consent and privacy choices</h3>
+<p>We use consent records and audit events to prevent new scans or searches when third-party AI usage is off, to transfer the correct consent state to Share-to-App, and to demonstrate when a choice was made.</p>
+<p>Where consent is our lawful basis, you may withdraw it at any time in <strong>ME</strong>. Withdrawal does not affect processing that was lawful before withdrawal and does not itself delete prior scans, results, or audit records.</p>
+<h3>5.3 To secure, troubleshoot, and improve reliability</h3>
+<p>We use operational data to authenticate requests, prevent one installation receiving another installation&#x27;s results, reconcile ambiguous uploads, prevent duplicate captures and duplicate notifications, enforce rate and usage limits, recover jobs after worker restarts, detect abuse, investigate security incidents, and improve reliability.</p>
+<p>Where applicable, we rely on our legitimate interests in operating a secure, dependable, cost-controlled Service, provided those interests are not overridden by your rights. We minimise diagnostics and restrict access according to job role and operational need.</p>
+<h3>5.4 To comply with law and protect rights</h3>
+<p>We may use or preserve information to comply with legal obligations, enforce our Terms and Conditions, respond to lawful requests, establish or defend legal claims, protect users or the public, and document account deletion or consent history.</p>
+<h3>5.5 To send marketing you requested</h3>
+<p>We send marketing email only where you have actively opted in or another lawful permission applies. Consent is optional and is not bundled with account creation, AI consent, or use of the Service. You can withdraw it through the marketing preference control in <strong>ME</strong>, through the unsubscribe link in each marketing email, or by contacting us. Withdrawal does not affect transactional messages that are necessary to administer or secure your account.</p>
+<h2>6. When we share information</h2>
+<p>We share personal information only as needed for the purposes described in this Policy.</p>
+<h3>6.1 Google Gemini</h3>
+<p>After you grant third-party AI consent and start a scan, ModaScout sends the uploaded image and an analysis prompt to Google Gemini. Gemini returns structured clothing-analysis information. The image may contain more than the selected garment because the full photo is used to detect visible items.</p>
+<h3>6.2 SerpAPI, Google Lens, and Google Shopping</h3>
+<p>For each garment you choose to search, ModaScout may provide SerpAPI with a selected garment crop through a time-limited signed URL, a garment description or search query, language and country parameters, and other search settings. SerpAPI obtains results from Google Lens and, only in the existing emergency fallback case, Google Shopping. Those services return product and retailer information.</p>
+<p>The current search design normally uses two concurrent Lens routes per garment and permits at most one emergency Shopping call, for a maximum of three SerpAPI calls per garment. This operational limit does not change the categories of information shared.</p>
+<h3>6.3 Supabase</h3>
+<p>Supabase provides authentication, PostgreSQL database services, and private object storage. It stores account records, consent state, scans, garment crops, search and product data, Wardrobe items, notification records, quotas, diagnostics, and deletion state. Source and crop images are held in a private bucket and read through backend-authorised or time-limited signed URLs.</p>
+<h3>6.4 Render</h3>
+<p>Render hosts the ModaScout API and worker processes. It processes API traffic, network information, job state, provider calls, logs, and the information needed to run the backend.</p>
+<h3>6.5 Expo, Apple, and Google notification services</h3>
+<p>If notifications are enabled, ModaScout sends the push token and notification payload through Expo&#x27;s push service and the relevant Apple Push Notification service or Firebase Cloud Messaging infrastructure. Apple and Google also process app-store, device, crash, purchase, and platform information under their own terms where applicable.</p>
+<h3>6.6 Retailers, product sites, and image hosts</h3>
+<p>ModaScout may retrieve publicly available product information, retailer metadata, and product images to validate and present results. When you open a retailer link, your browser or retailer app connects directly to that retailer. The retailer may receive your IP address, device or browser information, referral information, and any information you provide to it. ModaScout is not responsible for the retailer&#x27;s independent processing.</p>
+<h3>6.7 Other service providers and professional advisers</h3>
+<p>Resend provides transactional email and our opt-in marketing-email service. ExchangeRate-API provides currency-reference data; we do not need to send it your account, photos, garment crops, or Wardrobe data. We may also use security, backup, customer-support, legal, accounting, or audit suppliers. They may process only the information reasonably necessary for their service and must protect it under contract and applicable law.</p>
+<h3>6.8 Legal, safety, and business events</h3>
+<p>We may disclose information when reasonably necessary to comply with law, respond to lawful process, protect rights or safety, investigate fraud or abuse, or establish or defend claims. If the Service or its operator is involved in a merger, financing, reorganisation, acquisition, or asset transfer, information may be disclosed under confidentiality and transferred subject to applicable law and notice requirements.</p>
+<h2>7. No sale or behavioural advertising</h2>
+<p>ModaScout does not currently sell or rent personal information. The current mobile app does not include third-party advertising SDKs, and we do not share personal information for cross-context behavioural advertising or targeted advertising based on activity across unrelated services.</p>
+<p>Marketing email is based on your direct choice to hear from ModaScout; it is not behavioural advertising and does not involve selling your personal information.</p>
+<p>If this changes, we will update this Policy and provide any notice, consent, or opt-out required by law before the new use begins.</p>
+<h2>8. Automated processing and AI limitations</h2>
+<p>ModaScout uses automated systems to detect clothing, create search descriptions, rank and filter product results, localise retailer links, recover product images, enforce usage limits, and route notifications. These systems can make mistakes, including missing a garment, choosing an imperfect crop, returning an irrelevant item, or displaying stale or incomplete retailer information.</p>
+<p>The automated processing is intended to help you discover clothing products. It is not used to make decisions that produce legal or similarly significant effects about you. You can choose a different photo, select different garments, retry a search, change preferences, delete a scan, withdraw AI consent, or stop using the Service.</p>
+<h2>9. International data transfers</h2>
+<p>ModaScout Limited is established in the United Kingdom. Our production database and private image storage are hosted through Supabase in the United States, currently in the <strong>us-east-1</strong> region; our production API and workers are hosted by Render in Virginia, United States. Google, SerpAPI, Expo, Apple, Resend and their subprocessors may also process information in the United States, the United Kingdom, the European Economic Area, and other countries. Data-protection laws in those countries may differ from those where you live.</p>
+<p>Where transfer restrictions apply, we rely as appropriate on adequacy regulations or decisions, approved standard contractual clauses, the UK International Data Transfer Agreement or UK Addendum, participation in a recognised data-privacy framework, and contractual, organisational, and technical safeguards. Our principal providers&#x27; data-processing terms include transfer safeguards where required.</p>
+<p>ModaScout is not initially offered in the European Union or European Economic Area. If we later make the Service available there, we will complete the required territorial, representative, transfer, and notice arrangements before that launch.</p>
+<h2>10. How long we keep information</h2>
+<p>We keep personal information only for as long as reasonably necessary for the purposes described here, including to provide the Service, honour choices, secure the platform, comply with law, resolve disputes, and complete deletion.</p>
+<p>Our retention schedule is as follows:</p>
+<ul>
+<li><strong>Registered accounts and profiles:</strong> kept until you delete the account or we lawfully close it, subject to the limited records below and periodic reviews of whether continued retention remains necessary.</li>
+<li><strong>Inactive guest accounts:</strong> scheduled for deletion after 12 months without activity, subject to reasonable notice or technical safeguards where appropriate. Guest data may be lost earlier if its credentials can no longer be linked to you.</li>
+<li><strong>Scans, source images, garment crops, cached product images, analysis, and results:</strong> kept until you delete the scan or relevant account. Deleting a scan triggers deletion of its private image objects and operational data. A short-lived technical tombstone may remain for approximately 24 hours to reconcile uploads already in flight and verify cleanup.</li>
+<li><strong>Wardrobe items:</strong> kept until you unlike or remove the product or delete the relevant account.</li>
+<li><strong>Notification delivery records:</strong> completed outbox records are deleted after 30 days. Active tokens and preferences remain until disabled, revoked, replaced, or the account is deleted.</li>
+<li><strong>Local app and App Group data:</strong> kept until it is overwritten, cleared by the app, removed through account or share cleanup, or removed when you delete the app or its data. Uninstalling the app does not by itself guarantee deletion of server-side guest or account data.</li>
+<li><strong>Consent and account-deletion audit records:</strong> limited records are kept for six years after account deletion or completion of the relevant request so we can demonstrate the instruction, prevent data resurrection, meet legal obligations, and resolve claims.</li>
+<li><strong>Identifiable security, provider, and technical diagnostic records:</strong> normally kept for 90 days. We may retain a specific record longer where necessary to investigate an incident, prevent fraud or abuse, or establish or defend a legal claim.</li>
+<li><strong>Aggregated operational and usage summaries:</strong> kept for up to 24 months. We minimise or remove identifiers where they are no longer needed.</li>
+<li><strong>Support correspondence:</strong> normally kept for 24 months after the matter is closed, or longer where reasonably necessary for an unresolved dispute, complaint, legal duty, or claim.</li>
+<li><strong>Marketing consent and suppression records:</strong> kept while marketing consent is active and afterwards for as long as necessary to honour an unsubscribe, demonstrate the consent history, and meet legal obligations. We retain the minimum suppression information needed to avoid contacting someone who opted out.</li>
+<li><strong>Database backups:</strong> Supabase Pro daily database backups are retained for up to seven days. Those database backups contain database records and object metadata, but do not contain the actual files stored in the private <strong>capture-images</strong> Storage bucket. We have not configured a separate backup or replication system for those Storage objects.</li>
+<li><strong>Provider-held copies:</strong> may remain for the provider&#x27;s documented processing or deletion cycle. For paid Gemini services, Google states that submitted content is not used to improve its products, but may temporarily log prompts and responses for abuse monitoring unless Zero Data Retention has been approved. ModaScout does not currently claim Zero Data Retention approval.</li>
+<li><strong>Legal holds:</strong> where reasonably necessary to comply with law or establish, exercise, or defend claims, we may preserve the minimum relevant information until that need ends.</li>
+</ul>
+<p>If a deletion cannot complete immediately, ModaScout marks the data and account for deletion, prevents new scans or searches for that identity where appropriate, and retries the cleanup.</p>
+<p>We retain only the minimum information needed to record and finish that request. Information may remain temporarily in protected backups but is not restored for ordinary use after a valid deletion request.</p>
+<h2>11. Your choices and controls</h2>
+<h3>11.1 Third-party AI usage</h3>
+<p>You can grant or withdraw third-party AI consent in <strong>ME</strong>. If it is off, ModaScout will not start new scans that require Gemini, SerpAPI, Google Lens, or Google Shopping. Turning it off does not delete completed scans or reverse provider processing that already occurred.</p>
+<h3>11.2 Photos and camera</h3>
+<p>You choose whether to use the photo library, camera, iOS Share Extension, or Android share target. You can change camera or photo permissions in system settings. ModaScout does not scan your whole library; it processes images you select, capture, or share to it.</p>
+<h3>11.3 Notifications</h3>
+<p>You can turn ModaScout notifications off in <strong>ME</strong> and control operating-system permission in system settings. Notification previews and lock-screen visibility are controlled by your device settings.</p>
+<h3>11.4 Country, currency, and result preferences</h3>
+<p>You can change Base Country, local-currency preference, optional sex preference, and the opposite-department results preference in <strong>ME</strong>. Changes apply to later searches and do not retroactively alter an already snapshotted search.</p>
+<h3>11.5 Scan and account deletion</h3>
+<p>You can delete individual scans in the app. Registered users can request account deletion in the account controls. After a registered account is deleted, the app may create a fresh guest session so the app can continue to open; that new guest session is separate from the deleted account.</p>
+<p>Deleting the app from your device does not automatically submit a server-side account-deletion request. If you cannot access the app, use <a href="https://getmodascout.com/delete-account">https://getmodascout.com/delete-account</a>. We normally verify an external request through the registered email address or authenticated account and request additional evidence only where reasonably necessary.</p>
+<h3>11.6 Marketing email</h3>
+<p>When creating a registered account, you can decide whether to receive marketing email through a separate unticked choice. You may later withdraw through <strong>ME</strong>, an unsubscribe link in any marketing message, or by contacting us. Withdrawing from marketing does not disable essential authentication, security, deletion, or support messages.</p>
+<h2>12. Your privacy rights</h2>
+<p>Depending on where you live and subject to legal exceptions, you may have the right to:</p>
+<ul>
+<li>ask whether we process your personal information and obtain a copy;</li>
+<li>correct inaccurate or incomplete information;</li>
+<li>request deletion;</li>
+<li>restrict or object to certain processing;</li>
+<li>receive certain information in a portable format;</li>
+<li>withdraw consent at any time where processing is based on consent;</li>
+<li>object to direct marketing and withdraw any marketing consent at any time;</li>
+<li>opt out of sale, sharing, or targeted advertising where applicable, although ModaScout does not currently conduct those activities; and</li>
+<li>complain to a data-protection authority.</li>
+</ul>
+<p>To exercise a right, use <a href="https://getmodascout.com/support">https://getmodascout.com/support</a> or contact <strong>mailing@getmodascout.com</strong>. We normally verify a request through your authenticated account or control of the registered email address. We request additional identification only where it is reasonably necessary and proportionate. We normally respond within one month; where applicable law permits more time for a complex or multiple request, we will explain the extension within the initial period. We will not discriminate against you for exercising a legally protected right.</p>
+<p>In the United Kingdom, you may complain through the <a href="https://ico.org.uk/make-a-complaint/">Information Commissioner&#x27;s Office complaint service</a>. In other regions, you may contact your local privacy regulator. We would appreciate the opportunity to address your concern first, but you do not have to contact us before using a regulator where the law gives you that right.</p>
+<h3>12.1 Privacy complaints</h3>
+<p>To make a privacy complaint, contact our privacy lead using Section 17 and describe what happened and the resolution you seek. We will acknowledge the complaint, investigate it fairly, and normally provide a substantive response within 30 days. If we need more time, we will explain why and provide an updated timeframe. You may also complain to the regulator that has jurisdiction where you live.</p>
+<h3>12.2 Additional United States disclosures</h3>
+<p>Where an applicable US state privacy law covers ModaScout, categories processed may include identifiers; account and customer-record information; internet or network activity; photos and other sensory information; product interests and Wardrobe activity; approximate country or region; and inferences or preferences used to provide search results. We use and disclose these categories for the business and service purposes described in this Policy.</p>
+<p>We do not knowingly sell these categories or share them for cross-context behavioural advertising. We do not use sensitive personal information to infer characteristics for unrelated purposes. Applicable state law may give you rights to know, access, correct, delete, or obtain a portable copy and to appeal a denied request.</p>
+<p>If we deny a privacy request and the law where you live provides an appeal right, reply to the decision or submit an appeal through our support page with the subject <strong>Privacy appeal</strong>. We will review the appeal separately where required and explain any available regulator contact.</p>
+<h2>13. Children</h2>
+<p>ModaScout is an adult service. You must be at least 18 years old to create or use a guest or registered account, upload or share an image, or otherwise use the Service. ModaScout is not directed to children, and we do not knowingly collect personal information from anyone under 18.</p>
+<p>If we learn that someone under 18 has used ModaScout or submitted personal information, we will restrict the account and take reasonable steps to delete the information, subject to any minimal record needed for safety, legal compliance, and preventing repeated underage access. A parent or guardian may contact <strong>mailing@getmodascout.com</strong> or use our support page to report suspected underage use.</p>
+<h2>14. Security</h2>
+<p>ModaScout uses technical and organisational measures designed to protect personal information. Current safeguards include authenticated API access, server-side secrets, private object storage, row-level and runtime database controls, time-limited signed image URLs, encrypted network transport, per-user ownership checks, per-installation notification routing, bounded upload and image validation, durable deletion records, and restricted administrative diagnostics.</p>
+<p>No security measure is perfect. You are responsible for protecting your device, account credentials, email account, and any screenshots you save or share. Tell us promptly if you believe your account or information has been compromised.</p>
+<h2>15. Third-party services and links</h2>
+<p>Retailers, product sites, Apple, Google, and other third parties have their own privacy notices and terms. This Policy does not govern their independent processing. Review a retailer&#x27;s terms, privacy policy, returns policy, product information, and payment security before making a purchase.</p>
+<h2>16. Changes to this Policy</h2>
+<p>We may update this Policy when the Service, providers, law, or data practices change. We will change the <strong>Last updated</strong> date and provide additional notice when required. If a change materially affects processing based on consent, we will request a new choice where the law or app-store rules require it.</p>
+<h2>17. Contact us</h2>
+<p>Questions, complaints, privacy requests, and deletion requests may be submitted through <a href="https://getmodascout.com/support">https://getmodascout.com/support</a>, by email to <strong>mailing@getmodascout.com</strong>, or by post to <strong>ModaScout Limited, 11 Khama Road, London, SW17 0EN, United Kingdom</strong>. Account-deletion requests may also be submitted at <a href="https://getmodascout.com/delete-account">https://getmodascout.com/delete-account</a>. Telephone: <strong>+44 7412 805807</strong>.</p></main>
+  <footer><nav aria-label="Information"><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/support/">Support</a><a href="/delete-account/">Delete account</a></nav><p>ModaScout Limited · Company number 17397182</p><p><a href="mailto:mailing@getmodascout.com">mailing@getmodascout.com</a></p></footer>
+</body>
+</html>
